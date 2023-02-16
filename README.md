@@ -14,6 +14,7 @@ https://www.kaggle.com/datasets/teralasowmya/bankchurner
 
 ## Technology & Libraries Used
 
+![Libraries](https://github.com/carasaj/bank_churn_project/blob/main/Resources/Libraries.PNG) 
 
 https://scikit-learn.org/stable/supervised_learning.html#supervised-learning
 
