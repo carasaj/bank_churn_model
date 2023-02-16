@@ -11,6 +11,8 @@ Our team has found reliable data on Kaggle that will help us determine how to im
 ## Data Source
 Kaggle page
 https://www.kaggle.com/datasets/teralasowmya/bankchurner
+Comparison Dataset
+https://www.kaggle.com/datasets/mathchi/churn-for-bank-customers
 
 ## Technology & Libraries Used
 
