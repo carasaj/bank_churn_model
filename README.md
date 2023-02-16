@@ -12,6 +12,11 @@ Our team has found reliable data on Kaggle that will help us determine how to im
 Kaggle page
 https://www.kaggle.com/datasets/teralasowmya/bankchurner
 
+## Technology & Libraries Used
+
+
+https://scikit-learn.org/stable/supervised_learning.html#supervised-learning
+
 
 ## Data Preparation and Model Training
 
