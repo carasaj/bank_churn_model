@@ -25,22 +25,42 @@ https://xgboost.readthedocs.io/en/stable/install.html
 
 ## Data Preparation and Model Training
 
-###Education
+### Education
 
 The education category 'Graduate' is vague/ambiguous 
+
 In 2021, the highest level of education of the population age 25 and older in the United States was distributed as follows: 
+
     8.9% had less than a high school diploma or equivalent.
+    
         our dataset shows 17% uneducated
+        
     27.9% had high school graduate as their highest level of school completed. 
+    
         our dataset shows 23.3%
+        
     14.9% had completed some college but not a degree.
+    
         ours only has an ambiguous 'graduate' as 36.6%. could be this, could mean post-grad, term is used interchangeably.
+        
     10.5% had an associate degree as their highest level of school completed.
+    
+    
         our dataset has no distinction between associate/undergrad. just says 'college'. ours shows 11.9% for college
+        
+        
     23.5% had a bachelors degree as their highest degree.
+    
+    
         ours shows 11.9% for college
+        
+        
     14.4% had completed an advanced degree such as a masters degree, professional degree or doctoral degree. 
+    
+    
         ours shows 6.1% post-graduate, 5.1% doctorate, and the ambiguous 36.6% 'graduate'ArithmeticError
+        
+        
 
 
 
