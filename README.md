@@ -80,23 +80,23 @@ Best Model details
 
 clf = GradientBoostingClassifier(
 
-n_estimators=500,    #default = 100    range =
+n_estimators=500,                    #default = 100    range = 1-inf
 
-random_state=2,     #default = None   range =
+random_state=2,                      #default = None   range = 1-inf
 
-subsample=1,     #default = 1   range =
+subsample=1,                         #default = 1   range = 0. - 1
 
-min_samples_split = 4,      #default = 2   range = 2-inf
+min_samples_split = 4,               #default = 2   range = 2-inf
 
-max_depth=3,  #default = 3    range = 1-inf
+max_depth=3,                         #default = 3    range = 1-inf
 
-min_impurity_decrease=0,    #default = 0    range = 0 - inf
+min_impurity_decrease=0,             #default = 0    range = 0 - inf
 
-min_samples_leaf = 1,            #default = 1   range = 1 - inf
+min_samples_leaf = 1,                #default = 1   range = 1 - inf
 
-min_weight_fraction_leaf = 0,     #default = 0   range =0 - 0.5
-
-max_leaf_nodes = None     #default = None   range = 2-inf
+min_weight_fraction_leaf = 0,        #default = 0   range =0 - 0.5
+ 
+max_leaf_nodes = None                #default = None   range = 2-inf
 
 )
 
