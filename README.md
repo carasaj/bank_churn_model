@@ -34,18 +34,42 @@ The education category 'Graduate' is vague/ambiguous
 
 In 2021, the highest level of education of the population age 25 and older in the United States was distributed as follows:
 
-  8.9% had less than a high school diploma or equivalent
-    Our dataset shows 17% uneducated       
-  27.9% had high school graduate as their highest level of school completed.     
-    Our dataset shows 23.3%        
-  14.9% had completed some college but not a degree.    
-    Ours only has an ambiguous 'graduate' as 36.6%. could be this, could mean post-grad, term is used interchangeably.        
+
+
+  8.9% had less than a high school diploma or equivalent.
+  
+  
+  Our dataset shows 17% uneducated
+  
+  
+  27.9% had high school graduate as their highest level of school completed
+  
+  
+  Our dataset shows 23.3%        
+  
+  
+  14.9% had completed some college but not a degree.
+  
+  
+  Ours only has an ambiguous 'graduate' as 36.6%. could be this, could mean post-grad, term is used interchangeably.    
+  
+  
   10.5% had an associate degree as their highest level of school completed.  
-    Our dataset has no distinction between associate/undergrad. just says 'college'. ours shows 11.9% for college         
+  
+  
+  Our dataset has no distinction between associate/undergrad. just says  11.9% for college     
+  
+  
   23.5% had a bachelors degree as their highest degree.   
-    Ours shows 11.9% for college        
+  
+  
+  Ours shows 11.9% for college        
+  
+  
   14.4% had completed an advanced degree such as a masters degree, professional degree or doctoral degree.     
-   Ours shows 6.1% post-graduate, 5.1% doctorate, and the ambiguous 36.6% 'graduate'        
+  
+  
+  Ours shows 6.1% post-graduate, 5.1% doctorate, and the ambiguous 36.6% 'graduate'        
   
   It's hard to tell what they mean by 'graduate'. Unfortunately, its the bulk of our data, and dropping it will hurt our sample size. 
   The existence of a 'college' column suggests that graduate could mean beyond college. 
