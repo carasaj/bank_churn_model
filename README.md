@@ -112,7 +112,7 @@ min_weight_fraction_leaf = 0,     #default = 0   range =0 - 0.5
 max_leaf_nodes = None     #default = None   range = 2-inf
 )
 
-Baseline Model using the only Onehotencoder was not a ideal option for preprocessing as the target data was not classified accurately. 
+Model using Adabooster(n_estimators=1000)
 
 ## Contributors
 
