@@ -85,9 +85,13 @@ Feature creation to make a ratios, rankings, or 0/1 boolean classifier. Original
 
 Consider someone divorced as Single. Either a 1 (single/divorced) or a 2 (married)
   Divide that by the amount of dependents plus one, then divide that by two.
+
 make a ratio between avg open to buy and credit limit
+
 make a ratio between transaction amount and trans count
+
 make a ratio between age and tenure
+
 make a rank for the income as a 0-4 low-high
         
 Scale all numerical/float values that don't represent categories
