@@ -32,7 +32,8 @@ https://xgboost.readthedocs.io/en/stable/install.html
 
 The education category 'Graduate' is vague/ambiguous 
 
-In 2021, the highest level of education of the population age 25 and older in the United States was distributed as follows: 
+In 2021, the highest level of education of the population age 25 and older in the United States was distributed as follows:
+
   8.9% had less than a high school diploma or equivalent
     Our dataset shows 17% uneducated       
   27.9% had high school graduate as their highest level of school completed.     
