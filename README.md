@@ -28,6 +28,19 @@ https://xgboost.readthedocs.io/en/stable/install.html
 
 ## Data Preparation and Model Training
 
+### Comparing Each Variable to Attrition
+
+The idea behind looking at a single variable from the many was to help us determine if there are variables that are clearly usesless
+
+provide little to no utlility. Going through all the columns individually along with attrition/Status of the cusrtomer provided excelent data. 
+
+Train_test_split was used along with SVC, LogisticRegression and RandomForestClassifier models were used to find hte best accuracy, precision, 
+
+recall and f1 scores results. The one variable that outshined all others was Total_Revolving_Balance with the highest overall combination of results.
+
+As seen in the final code, this variable is in use and the least useful variables have been dropped to help improve our final results.
+
+
 ### Education
 
 The education category 'Graduate' is vague/ambiguous 
