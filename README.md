@@ -1,4 +1,7 @@
 # bank_churn_project
+
+The main file is bank_churner_final.ipynb
+
 Our project is to create a machine learning model for predicting customer churn for a bank. We will experiment with various processing techniques and models to maximize accuracy. Our best model will be compared to other attempts using similar models to show how each step impacts the accuracy. 
 
 
