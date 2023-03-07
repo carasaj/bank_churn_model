@@ -2,12 +2,12 @@
 
 The main notebook is `bank_churn_final.ipynb`
 
-The project goal is to create a machine learning model for predicting bank customer churn. Alternative data processing techniques, features, and models are used as comparisons.
+The project goal is to create a supervised machine learning model for predicting bank customer churn. Alternative data processing techniques, features, and models are used as comparisons. 
 
 
 ## Overview
 
-Our goal is to generate a model to predict a customers' likelihood of remaining a bank customer. Identifying and tuning a model to best predict this can greatly improve customer retention, which in turn will improve bank revenue. Banks generate revenue through selling products like bank loans and accounts to customers. Keeping and maintaining a good relationship with customers would ultimately mean customers will take on more bank products. 
+This readme will walk through how a binary classification model is used to predict a customers' likelihood of remaining a bank customer, also known as churn. Identifying and tuning the model to best predict churn can greatly improve customer retention, which in turn will improve bank revenue. Banks generate revenue through selling products like bank loans and accounts to customers. Keeping and maintaining a good relationship with customers would ultimately mean customers will take on more bank products. 
 
 ## Data Source
 
@@ -18,6 +18,7 @@ https://www.kaggle.com/datasets/teralasowmya/bankchurner
 
 Comparison dataset:
 https://www.kaggle.com/datasets/mathchi/churn-for-bank-customers
+This dataset was used to explore how the techniques used in the original dataset might work on similar data. It has less features.
 
 ## Technology & Libraries Used
 
@@ -49,18 +50,26 @@ Any rows with `NaN` or `Unknown` values were dropped.
 
 ### Education Category
 
-The `education` category `graduate` is ambiguous. It's hard to tell what they mean by `graduate` in the context of the other education categories.
+It was harder to rank the values within this category. Ranking is more desirable than using a categorizer like `OneHotEncoder` because education is mostly cumulative. i.e. you need a high school degree before college, college before masters, etc.,
+
+The `education` category `graduate` is ambiguous, so it's hard to tell what it means in the context of the other education categories.
 
 The existence of a `college` value suggests that a `graduate` is beyond college. 
 Alternatively, `college` could mean they attended college but did not graduate, and `graduate` actually represents standard undergrads.
+The `post-graduate` and `doctorate` value also add to the confusion, making the diferences between a `graduate` and `post-graduate` unclear.
         
 Its possibly a mix of multiple categories not included, i.e. trade schools, associate degrees, dropouts, or specializations. Unfortunately, its the bulk of our data, and dropping it will hurt our sample size. It was decided that the data would be kept, classifying `graduate` between `college` and `post-graduate`.
 
 `Uneducated = 0`
+
 `High School = 1`
+
 `College = 2`
+
 `Graduate = 3`
+
 `Post-Graduate = 4`
+
 `Doctorate = 5`
 
 
