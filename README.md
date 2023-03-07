@@ -8,7 +8,7 @@ Our project is to create a machine learning model for predicting bank customer c
 
 ## Overview
 
-Our goal is to generate a model that has the best f1 score , which is used to determine the customers' likelihood of remaining a bank customer or leaving the bank. Identifying and tuning a model to best predict this can greatly improve customer retention, which in turn will improve bank revenue. Banks generate revenue through selling products like bank loans and accounts to customers. Keeping and maintaining a good relationship with customers would ultimately mean customers will take on more bank products. 
+Our goal is to generate a model that has the best f1 score for attrited customers. The model would then be used to determine a customers' likelihood of remaining a bank customer or leaving the bank. Identifying and tuning a model to best predict this can greatly improve customer retention, which in turn will improve bank revenue. Banks generate revenue through selling products like bank loans and accounts to customers. Keeping and maintaining a good relationship with customers would ultimately mean customers will take on more bank products. 
 
 Our team has found reliable data on Kaggle that will help us determine how to improve customer attrition. We will use feature engineering and preprocessing to improve the readability of the data and bring relevant numbers to our model. The goal of our model is to find the best correlation with customer attrition. This data will be presented to the Norsk Bank to help them reduce customer churn. 
 
@@ -35,23 +35,18 @@ https://xgboost.readthedocs.io/en/stable/install.html
 
 ### Comparing Each Variable to Attrition
 
-The idea behind looking at a single variable from the many was to help us determine if there are variables that are clearly usesless
+Each potential feature was run against the target in a 1:1 model to determine their correlation. This novel technique was used to try and discern which features would piositively impact the model's predictions.
 
-provide little to no utlility. Going through all the columns individually along with attrition/Status of the cusrtomer provided excelent data. 
+Train_test_split was used along with SVC, LogisticRegression and RandomForestClassifier models were used to find the best accuracy, precision, recall and f1 scores results. The one variable that outshined all others was Total_Revolving_Balance with the highest overall combination of results.
 
-Train_test_split was used along with SVC, LogisticRegression and RandomForestClassifier models were used to find hte best accuracy, precision, 
-
-recall and f1 scores results. The one variable that outshined all others was Total_Revolving_Balance with the highest overall combination of results.
-
-As seen in the final code, this variable is in use and the least useful variables have been dropped to help improve our final results.
-
+While most variables were conserved as features in one way or another, this step proved useful for our initial analysis of the raw data.
 
 ### Education
 
-The education category 'Graduate' is vague/ambiguous. It's hard to tell what they mean by 'graduate'. 
+The education category 'Graduate' is ambiguous. It's hard to tell what they mean by 'graduate' in the context of the other education categories.
 
-The existence of a 'college' column suggests that graduate could mean beyond college. 
-Alternatively, college could mean you attended college but did not graduate, and 'graduate' represents standard undergrads.
+The existence of a 'college' column suggests that a 'graduate' is beyond college. 
+Alternatively, 'college' could mean they attended college but did not graduate, and 'graduate' actually represents standard undergrads.
         
 Its possibly a mix of multiple categories not included, i.e. trade schools, associate degrees, dropouts, or specializations. Unfortunately, its the bulk of our data, and dropping it will hurt our sample size. It was decided that the data would be kept, classifying 'graduates' between 'college' and 'post-graduate'.
 
@@ -68,8 +63,10 @@ Doctorate = 5
 
 Feature creation to make a ratios, rankings, or 0/1 boolean classifier. Original features are dropped in favor of the newly created features.
 
-Consider someone divorced as Single. Either a 1 (single/divorced) or a 2 (married)
-  Divide that by the amount of dependents plus one, then divide that by two.
+( Marital_Status / (Dependents + 1) / 2 ) = marital_dependent_ratio
+First, we change marital_status values from 'Single/Divorced/Married' to '1/1/2', reflecting the amount of income sources in their household.
+When both features are combined using the formula above, it results in a value between 0 and 1. This ratio reflects the amount of income vs dependents in a household. Essentially, a married couple with no dependents has the highest value of 1. A single person with multiple dependents would have a much lower ratio.
+
 
 make a ratio between avg open to buy and credit limit
 
