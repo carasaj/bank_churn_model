@@ -50,7 +50,9 @@ Any rows with `NaN` or `Unknown` values were dropped.
 
 ### Education Category
 
-It was harder to rank the values within this category. Ranking is more desirable than using a categorizer like `OneHotEncoder` because education is mostly cumulative. i.e. you need a high school degree before college, college before masters, etc.,
+This was the hardest category to rank. 
+
+Ranking is more desirable than using a categorizer like `OneHotEncoder` because education is mostly cumulative. i.e. you need a high school degree before college, college before masters, etc.,
 
 The `education` category `graduate` is ambiguous, so it's hard to tell what it means in the context of the other education categories.
 
