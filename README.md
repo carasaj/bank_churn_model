@@ -67,9 +67,13 @@ Doctorate = 5
 
 ### Marital Dependent Ratio
 
-( Marital_Status / (Dependents + 1) / 2 ) = marital_dependent_ratio
-First, we change marital_status values from 'Single/Divorced/Married' to '1/1/2', reflecting the amount of income sources in their household.
-When both features are combined using the formula above, it results in a value between 0 and 1. This ratio reflects the amount of income vs dependents in a household. Essentially, a married couple with no dependents has the highest value of 1. A single person with multiple dependents would have a much lower ratio.
+First, we change marital_status values from 'Single/Divorced/Married' to '1/1/2', reflecting the amount of income sources in their household. The dependents  are kept as `int` values between 0 and 6.
+
+When both features are combined using the formula below, it results in a `float` between 0 and 1. This ratio reflects the amount of income vs dependents in a household. 
+
+Essentially, a married couple with no dependents has the highest value of 1. A single person with multiple dependents would have a much lower ratio.
+
+`( Marital_Status / (Dependents + 1) / 2 ) = marital_dependent_ratio`
 
 ### Credit Usage
 make a ratio between avg open to buy and credit limit
