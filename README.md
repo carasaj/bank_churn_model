@@ -14,10 +14,10 @@ Our goal is to generate a model to predict a customers' likelihood of remaining 
 
 Bank data was sourced from Kaggle.
 
-Kaggle page
+Main dataset:
 https://www.kaggle.com/datasets/teralasowmya/bankchurner
 
-Comparison Dataset
+Comparison dataset:
 https://www.kaggle.com/datasets/mathchi/churn-for-bank-customers
 
 ## Technology & Libraries Used
