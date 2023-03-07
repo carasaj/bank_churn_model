@@ -34,10 +34,7 @@ https://xgboost.readthedocs.io/en/stable/install.html
 
 ### Data Cleanup
 
-Initially, a handful of column names were changed for clarity and/or brevity. This was just to make the raw dataset easier to read.
-MAYBE REMOVE THAT PART FROM CODE AND REMOVE THIS LINE. NO NEED FOR IT ANYMORE.
-
-Any rows with `NaN` or `Unknown` values were dropped. 
+Rows with excessive Unknown values were dropped to preserve the sample size. No further data cleaning was necessary.
 
 ### Feature Analysis
 
@@ -47,90 +44,33 @@ Out of the original column data, the highest correlating feature was `Total_Revo
 
 While most variables were conserved as features in one way or another, this step proved useful for our initial analysis of the raw data.
 
-### Marital Dependent Ratio
-
-First, we change marital_status values from `Single/Divorced/Married` to `1/1/2`, reflecting the amount of income sources in their household. The dependents  are kept as `int` values between `0 and 6`.
-
-When both features are combined using the formula below, it results in a `float` between `0 and 1`. 
-
-`( Marital_Status / (Dependents + 1) / 2 ) = marital_dependent_ratio`
-
-This ratio reflects the amount of income vs dependents in a household. 
-
-Essentially, a married couple with no dependents has the highest value of `1`. A single person with multiple dependents would have a much lower ratio.
-
-### Credit Usage
-make a ratio between avg open to buy and credit limit
-
-### Average Transaction Value
-make a ratio between transaction amount and trans count
-
-### Tenure by Age
-make a ratio between age and tenure
-
-### Income Rank
-make a rank for the income as a 0-4 low-high
-
-### Education Category
-
-This was the hardest category to rank. 
-
-Ranking is more desirable than using a categorizer like `OneHotEncoder` because education is mostly cumulative. i.e. you need a high school degree before college, college before masters, etc.,
-
-The `education` category `graduate` is ambiguous, so it's hard to tell what it means in the context of the other education categories.
-
-The existence of a `college` value suggests that a `graduate` is beyond college. 
-Alternatively, `college` could mean they attended college but did not graduate, and `graduate` actually represents standard undergrads.
-The `post-graduate` and `doctorate` value also add to the confusion, making the diferences between a `graduate` and `post-graduate` unclear.
-        
-Its possibly a mix of multiple categories not included, i.e. trade schools, associate degrees, dropouts, or specializations.  It was decided that the data would be kept, classifying `graduate` between `college` and `post-graduate`.
-
-`Uneducated = 0`   `High School = 1`   `College = 2`
-
-`Graduate = 3`   `Post-Graduate = 4`   `Doctorate = 5`
 
 ### Standard Scaling with Column Transformer
-Scale all numerical/float values that don't represent categories
+Scale numerical/float values
 
-Use Column Transformer to scale only the numerical/float values that don't
-represent non-ranked categories (i.e. 0/1 for male/female are unranked categories)
+Use Column Transformer to target specific features for scaling
 
 ### Oversampling
 Use SMOTE to add synthetic data and balance our target feature value count
 
 
+## Hyperparameters
+
+No major hyperparameter tuning was needed. While GridSearch was done to explore the best possible values, only the following were changed:
+
+`n_estimators=500`
+
+`random_state= 2`
 
 ## Model Evaluation
-
-Best Model details
-
-clf = GradientBoostingClassifier(
-
-n_estimators=500,                    #default = 100    range = 1-inf
-
-random_state=2,                      #default = None   range = 1-inf
-
-subsample=1,                         #default = 1   range = 0. - 1
-
-min_samples_split = 4,               #default = 2   range = 2-inf
-
-max_depth=3,                         #default = 3    range = 1-inf
-
-min_impurity_decrease=0,             #default = 0    range = 0 - inf
-
-min_samples_leaf = 1,                #default = 1   range = 1 - inf
-
-min_weight_fraction_leaf = 0,        #default = 0   range =0 - 0.5
- 
-max_leaf_nodes = None                #default = None   range = 2-inf
-
-)
-
 
 ## Contributors
 
 Austin Caras
+
 Ben Harrington
+
 Madhuri Krishna
+
 Brian Peebles
 
