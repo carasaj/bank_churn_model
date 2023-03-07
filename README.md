@@ -13,11 +13,10 @@ This readme will walk through how a binary classification model is used to predi
 
 Bank data was sourced from Kaggle.
 
-Main dataset:
-https://www.kaggle.com/datasets/teralasowmya/bankchurner
+Main dataset:https://www.kaggle.com/datasets/teralasowmya/bankchurner
 
-Comparison dataset:
-https://www.kaggle.com/datasets/mathchi/churn-for-bank-customers
+Comparison dataset: https://www.kaggle.com/datasets/mathchi/churn-for-bank-customers
+
 This dataset was used to explore how the techniques used in the original dataset might work on similar data. It has less features.
 
 ## Technology & Libraries Used
@@ -33,14 +32,6 @@ https://xgboost.readthedocs.io/en/stable/install.html
 
 ## Data Preparation, Feature Engineering, and Model Training
 
-### Feature Analysis
-
-Each potential feature was run against the target in a 1:1 model to determine their correlation. This novel technique was used to try and discern which features were irrelevant.
-
-Out of the original column data, the highest correlating feature was `Total_Revolving_Balance`.
-
-While most variables were conserved as features in one way or another, this step proved useful for our initial analysis of the raw data.
-
 ### Data Cleanup
 
 Initially, a handful of column names were changed for clarity and/or brevity. This was just to make the raw dataset easier to read.
@@ -48,24 +39,13 @@ MAYBE REMOVE THAT PART FROM CODE AND REMOVE THIS LINE. NO NEED FOR IT ANYMORE.
 
 Any rows with `NaN` or `Unknown` values were dropped. 
 
-### Education Category
+### Feature Analysis
 
-This was the hardest category to rank. 
+Each potential feature was run against the target in a 1:1 model to determine their correlation. This novel technique was used to try and discern which features were irrelevant.
 
-Ranking is more desirable than using a categorizer like `OneHotEncoder` because education is mostly cumulative. i.e. you need a high school degree before college, college before masters, etc.,
+Out of the original column data, the highest correlating feature was `Total_Revolving_Balance`.
 
-The `education` category `graduate` is ambiguous, so it's hard to tell what it means in the context of the other education categories.
-
-The existence of a `college` value suggests that a `graduate` is beyond college. 
-Alternatively, `college` could mean they attended college but did not graduate, and `graduate` actually represents standard undergrads.
-The `post-graduate` and `doctorate` value also add to the confusion, making the diferences between a `graduate` and `post-graduate` unclear.
-        
-Its possibly a mix of multiple categories not included, i.e. trade schools, associate degrees, dropouts, or specializations.  It was decided that the data would be kept, classifying `graduate` between `college` and `post-graduate`.
-
-`Uneducated = 0`   `High School = 1`   `College = 2`
-
-`Graduate = 3`   `Post-Graduate = 4`   `Doctorate = 5`
-
+While most variables were conserved as features in one way or another, this step proved useful for our initial analysis of the raw data.
 
 ### Marital Dependent Ratio
 
@@ -90,6 +70,24 @@ make a ratio between age and tenure
 
 ### Income Rank
 make a rank for the income as a 0-4 low-high
+
+### Education Category
+
+This was the hardest category to rank. 
+
+Ranking is more desirable than using a categorizer like `OneHotEncoder` because education is mostly cumulative. i.e. you need a high school degree before college, college before masters, etc.,
+
+The `education` category `graduate` is ambiguous, so it's hard to tell what it means in the context of the other education categories.
+
+The existence of a `college` value suggests that a `graduate` is beyond college. 
+Alternatively, `college` could mean they attended college but did not graduate, and `graduate` actually represents standard undergrads.
+The `post-graduate` and `doctorate` value also add to the confusion, making the diferences between a `graduate` and `post-graduate` unclear.
+        
+Its possibly a mix of multiple categories not included, i.e. trade schools, associate degrees, dropouts, or specializations.  It was decided that the data would be kept, classifying `graduate` between `college` and `post-graduate`.
+
+`Uneducated = 0`   `High School = 1`   `College = 2`
+
+`Graduate = 3`   `Post-Graduate = 4`   `Doctorate = 5`
 
 ### Standard Scaling with Column Transformer
 Scale all numerical/float values that don't represent categories
