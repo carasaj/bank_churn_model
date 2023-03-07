@@ -31,17 +31,24 @@ https://imbalanced-learn.org/stable/install.html
 https://xgboost.readthedocs.io/en/stable/install.html
 
 
-## Data Preparation and Model Training
+## Data Preparation, Feature Engineering, and Model Training
 
-### Comparing Each Variable to Attrition
+### Feature Analysis
 
-Each potential feature was run against the target in a 1:1 model to determine their correlation. This novel technique was used to try and discern which features would piositively impact the model's predictions.
+Each potential feature was run against the target in a 1:1 model to determine their correlation. This novel technique was used to try and discern which features were irrelevant.
 
-Train_test_split was used along with SVC, LogisticRegression and RandomForestClassifier models were used to find the best accuracy, precision, recall and f1 scores results. The one variable that outshined all others was Total_Revolving_Balance with the highest overall combination of results.
+Out of the original column data, the highest correlating feature was Total_Revolving_Balance.
 
 While most variables were conserved as features in one way or another, this step proved useful for our initial analysis of the raw data.
 
-### Education
+### Data Cleanup
+
+Initially, a handful of column names were changed for clarity and/or brevity. This was just to make the raw dataset easier to read.
+MAYBE REMOVE THAT PART FROM CODE AND REMOVE THIS LINE. NO NEED FOR IT ANYMORE.
+
+Some columns had NaN or Unknown values; these were dropped. 
+
+### Education Category
 
 The education category 'Graduate' is ambiguous. It's hard to tell what they mean by 'graduate' in the context of the other education categories.
 
@@ -58,29 +65,31 @@ Post-Graduate = 4
 Doctorate = 5
 
 
-
-### Feature Engineering
-
-Feature creation to make a ratios, rankings, or 0/1 boolean classifier. Original features are dropped in favor of the newly created features.
+### Marital Dependent Ratio
 
 ( Marital_Status / (Dependents + 1) / 2 ) = marital_dependent_ratio
 First, we change marital_status values from 'Single/Divorced/Married' to '1/1/2', reflecting the amount of income sources in their household.
 When both features are combined using the formula above, it results in a value between 0 and 1. This ratio reflects the amount of income vs dependents in a household. Essentially, a married couple with no dependents has the highest value of 1. A single person with multiple dependents would have a much lower ratio.
 
-
+### Credit Usage
 make a ratio between avg open to buy and credit limit
 
+### Average Transaction Value
 make a ratio between transaction amount and trans count
 
+### Tenure by Age
 make a ratio between age and tenure
 
+### Income Rank
 make a rank for the income as a 0-4 low-high
-        
+
+### Standard Scaling with Column Transformer
 Scale all numerical/float values that don't represent categories
 
 Use Column Transformer to scale only the numerical/float values that don't
-represent categories (male/female)
+represent non-ranked categories (i.e. 0/1 for male/female are unranked categories)
 
+### Oversampling
 Use SMOTE to add synthetic data and balance our target feature value count
 
 
