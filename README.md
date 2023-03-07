@@ -60,19 +60,11 @@ The existence of a `college` value suggests that a `graduate` is beyond college.
 Alternatively, `college` could mean they attended college but did not graduate, and `graduate` actually represents standard undergrads.
 The `post-graduate` and `doctorate` value also add to the confusion, making the diferences between a `graduate` and `post-graduate` unclear.
         
-Its possibly a mix of multiple categories not included, i.e. trade schools, associate degrees, dropouts, or specializations. Unfortunately, its the bulk of our data, and dropping it will hurt our sample size. It was decided that the data would be kept, classifying `graduate` between `college` and `post-graduate`.
+Its possibly a mix of multiple categories not included, i.e. trade schools, associate degrees, dropouts, or specializations.  It was decided that the data would be kept, classifying `graduate` between `college` and `post-graduate`.
 
-`Uneducated = 0`
+`Uneducated = 0`   `High School = 1`   `College = 2`
 
-`High School = 1`
-
-`College = 2`
-
-`Graduate = 3`
-
-`Post-Graduate = 4`
-
-`Doctorate = 5`
+`Graduate = 3`   `Post-Graduate = 4`   `Doctorate = 5`
 
 
 ### Marital Dependent Ratio
