@@ -21,12 +21,13 @@ This second dataset contains similar data on bank customer churn. It has less fe
 
 ## Technology & Libraries Used
 
+[pandas](https://pandas.pydata.org/docs/)
+
+[pathlib](https://docs.python.org/3/library/pathlib.html)
+
 [scikit-learn](https://scikit-learn.org/stable/supervised_learning.html#supervised-learning)
 
 [imblearn](https://imbalanced-learn.org/stable/install.html)
-
-[xgboost](https://xgboost.readthedocs.io/en/stable/install.html)
-
 
 ## Data Preparation, Feature Engineering, and Model Training
 
