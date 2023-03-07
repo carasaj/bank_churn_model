@@ -21,7 +21,7 @@ This second dataset contains similar data on bank customer churn. It has less fe
 
 ## Technology & Libraries Used
 
-[scikit-learn](https://scikit-learn.org/stable/supervised_learning.html#supervised-learning){:target="_blank"}
+[scikit-learn](https://scikit-learn.org/stable/supervised_learning.html#supervised-learning)
 
 [imblearn](https://imbalanced-learn.org/stable/install.html)
 
