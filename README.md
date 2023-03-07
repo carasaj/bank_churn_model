@@ -17,7 +17,7 @@ Bank data was sourced from Kaggle.
 
 [Comparison dataset](https://www.kaggle.com/datasets/mathchi/churn-for-bank-customers)
 
-This second dataset was used to explore how the techniques used in the original dataset might work on similar data. It has less features.
+This second dataset contains similar data on bank customer churn. It has less features, and was only used as a comparison and reference.
 
 ## Technology & Libraries Used
 
