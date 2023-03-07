@@ -2,7 +2,7 @@
 
 The main file is bank_churn_final.ipynb
 
-Our project is to create a machine learning model for predicting bank customer churn. We will experiment with various processing techniques and models to maximize accuracy, precision, and recall. Our best model will be compared to other attempts using similar models to show how each step impacts the accuracy. 
+The project goal is to create a machine learning model for predicting bank customer churn. Alternative processing techniques and models are used as comparisons to highlight accuracy, precision, and recall of the finished model. 
 
 
 
@@ -10,7 +10,7 @@ Our project is to create a machine learning model for predicting bank customer c
 
 Our goal is to generate a model to predict a customers' likelihood of remaining a bank customer. Identifying and tuning a model to best predict this can greatly improve customer retention, which in turn will improve bank revenue. Banks generate revenue through selling products like bank loans and accounts to customers. Keeping and maintaining a good relationship with customers would ultimately mean customers will take on more bank products. 
 
-Our team has found reliable data on Kaggle that will help us determine how to improve customer attrition. We will use feature engineering and preprocessing to improve the readability of the data and bring relevant numbers to our model. The goal of our model is to find the best correlation with customer attrition. This data will be presented to the Norsk Bank to help them reduce customer churn. 
+Bank data was sourced from Kaggle. We will use feature engineering and preprocessing to improve the readability of the data and bring relevant numbers to our model. The goal of our model is to find the best correlation with customer attrition. This data will be presented to the Norsk Bank to help them reduce customer churn. 
 
 
 ## Data Source
