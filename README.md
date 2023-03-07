@@ -1,8 +1,8 @@
-# bank_churn_project
+# bank_churn_model
 
 The main notebook is `bank_churn_final.ipynb`
 
-The project goal is to create a supervised machine learning model for predicting bank customer churn. Alternative data processing techniques, features, and models are used as comparisons. 
+The goal is to create a supervised machine learning model for predicting bank customer churn. Alternative data processing techniques, features, and models are used as comparisons. 
 
 
 ## Overview
