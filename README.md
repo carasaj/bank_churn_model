@@ -10,10 +10,10 @@ The project goal is to create a machine learning model for predicting bank custo
 
 Our goal is to generate a model to predict a customers' likelihood of remaining a bank customer. Identifying and tuning a model to best predict this can greatly improve customer retention, which in turn will improve bank revenue. Banks generate revenue through selling products like bank loans and accounts to customers. Keeping and maintaining a good relationship with customers would ultimately mean customers will take on more bank products. 
 
-Bank data was sourced from Kaggle. We will use feature engineering and preprocessing to improve the readability of the data and bring relevant numbers to our model. The goal of our model is to find the best correlation with customer attrition. This data will be presented to the Norsk Bank to help them reduce customer churn. 
-
-
 ## Data Source
+
+Bank data was sourced from Kaggle.
+
 Kaggle page
 https://www.kaggle.com/datasets/teralasowmya/bankchurner
 
