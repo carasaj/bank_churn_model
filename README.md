@@ -2,7 +2,7 @@
 
 The main file is bank_churn_final.ipynb
 
-The project goal is to create a machine learning model for predicting bank customer churn. Alternative processing techniques and models are used as comparisons to highlight accuracy, precision, and recall of the finished model. 
+The project goal is to create a machine learning model for predicting bank customer churn. Alternative processing techniques and models are used as comparisons.
 
 
 
