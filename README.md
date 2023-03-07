@@ -7,27 +7,27 @@ The project goal is to create a supervised machine learning model for predicting
 
 ## Overview
 
-This readme will walk through how a binary classification model is used to predict a customers' likelihood of remaining a bank customer, also known as churn. Identifying and tuning the model to best predict churn can greatly improve customer retention, which in turn will improve bank revenue. Banks generate revenue through selling products like bank loans and accounts to customers. Keeping and maintaining a good relationship with customers would ultimately mean customers will take on more bank products. 
+This readme will walk through how a binary classification model is used to predict a customers' likelihood of remaining a bank customer, also known as churn. Identifying and tuning the model to best predict churn can greatly improve customer retention, which in turn will improve bank revenue.
 
 ## Data Source
 
 Bank data was sourced from Kaggle.
 
-Main dataset:https://www.kaggle.com/datasets/teralasowmya/bankchurner
+[Main dataset](https://www.kaggle.com/datasets/teralasowmya/bankchurner)
 
-Comparison dataset: https://www.kaggle.com/datasets/mathchi/churn-for-bank-customers
+[Comparison dataset](https://www.kaggle.com/datasets/mathchi/churn-for-bank-customers)
 
-This dataset was used to explore how the techniques used in the original dataset might work on similar data. It has less features.
+This second dataset was used to explore how the techniques used in the original dataset might work on similar data. It has less features.
 
 ## Technology & Libraries Used
 
 ![Libraries](https://github.com/carasaj/bank_churn_project/blob/main/Resources/Libraries.PNG) 
 
-https://scikit-learn.org/stable/supervised_learning.html#supervised-learning
+[scikit-learn](https://scikit-learn.org/stable/supervised_learning.html#supervised-learning)
 
-https://imbalanced-learn.org/stable/install.html
+[imblearn](https://imbalanced-learn.org/stable/install.html)
 
-https://xgboost.readthedocs.io/en/stable/install.html
+[xgboost](https://xgboost.readthedocs.io/en/stable/install.html)
 
 
 ## Data Preparation, Feature Engineering, and Model Training
