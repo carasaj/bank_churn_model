@@ -1,9 +1,8 @@
 # bank_churn_project
 
-The main file is bank_churn_final.ipynb
+The main notebook is `bank_churn_final.ipynb`
 
-The project goal is to create a machine learning model for predicting bank customer churn. Alternative processing techniques and models are used as comparisons.
-
+The project goal is to create a machine learning model for predicting bank customer churn. Alternative data processing techniques, features, and models are used as comparisons.
 
 
 ## Overview
@@ -37,7 +36,7 @@ https://xgboost.readthedocs.io/en/stable/install.html
 
 Each potential feature was run against the target in a 1:1 model to determine their correlation. This novel technique was used to try and discern which features were irrelevant.
 
-Out of the original column data, the highest correlating feature was Total_Revolving_Balance.
+Out of the original column data, the highest correlating feature was `Total_Revolving_Balance`.
 
 While most variables were conserved as features in one way or another, this step proved useful for our initial analysis of the raw data.
 
@@ -46,34 +45,36 @@ While most variables were conserved as features in one way or another, this step
 Initially, a handful of column names were changed for clarity and/or brevity. This was just to make the raw dataset easier to read.
 MAYBE REMOVE THAT PART FROM CODE AND REMOVE THIS LINE. NO NEED FOR IT ANYMORE.
 
-Some columns had NaN or Unknown values; these were dropped. 
+Any rows with `NaN` or `Unknown` values were dropped. 
 
 ### Education Category
 
-The education category 'Graduate' is ambiguous. It's hard to tell what they mean by 'graduate' in the context of the other education categories.
+The `education` category `graduate` is ambiguous. It's hard to tell what they mean by `graduate` in the context of the other education categories.
 
-The existence of a 'college' column suggests that a 'graduate' is beyond college. 
-Alternatively, 'college' could mean they attended college but did not graduate, and 'graduate' actually represents standard undergrads.
+The existence of a `college` value suggests that a `graduate` is beyond college. 
+Alternatively, `college` could mean they attended college but did not graduate, and `graduate` actually represents standard undergrads.
         
-Its possibly a mix of multiple categories not included, i.e. trade schools, associate degrees, dropouts, or specializations. Unfortunately, its the bulk of our data, and dropping it will hurt our sample size. It was decided that the data would be kept, classifying 'graduates' between 'college' and 'post-graduate'.
+Its possibly a mix of multiple categories not included, i.e. trade schools, associate degrees, dropouts, or specializations. Unfortunately, its the bulk of our data, and dropping it will hurt our sample size. It was decided that the data would be kept, classifying `graduate` between `college` and `post-graduate`.
 
-Uneducated = 0
-High School = 1
-College = 2
-Graduate = 3
-Post-Graduate = 4
-Doctorate = 5
+`Uneducated = 0`
+`High School = 1`
+`College = 2`
+`Graduate = 3`
+`Post-Graduate = 4`
+`Doctorate = 5`
 
 
 ### Marital Dependent Ratio
 
-First, we change marital_status values from 'Single/Divorced/Married' to '1/1/2', reflecting the amount of income sources in their household. The dependents  are kept as `int` values between 0 and 6.
+First, we change marital_status values from `Single/Divorced/Married` to `1/1/2`, reflecting the amount of income sources in their household. The dependents  are kept as `int` values between `0 and 6`.
 
-When both features are combined using the formula below, it results in a `float` between 0 and 1. This ratio reflects the amount of income vs dependents in a household. 
-
-Essentially, a married couple with no dependents has the highest value of 1. A single person with multiple dependents would have a much lower ratio.
+When both features are combined using the formula below, it results in a `float` between `0 and 1`. 
 
 `( Marital_Status / (Dependents + 1) / 2 ) = marital_dependent_ratio`
+
+This ratio reflects the amount of income vs dependents in a household. 
+
+Essentially, a married couple with no dependents has the highest value of `1`. A single person with multiple dependents would have a much lower ratio.
 
 ### Credit Usage
 make a ratio between avg open to buy and credit limit
