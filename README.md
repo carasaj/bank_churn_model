@@ -7,7 +7,7 @@ The goal is to create a supervised machine learning model for predicting bank cu
 
 ## Overview
 
-This readme will walk through how a binary classification model is used to predict a customers' likelihood of remaining a bank customer, also known as churn. Identifying and tuning the model to best predict churn can greatly improve customer retention, which in turn will improve bank revenue.
+This readme will walk through how a binary classification model is used to predict if a customer will end their services at bank, also known as churn. Identifying and tuning the model to best predict churn can greatly improve customer retention, which in turn will improve bank revenue.
 
 ## Data Source
 
