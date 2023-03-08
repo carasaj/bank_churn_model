@@ -61,8 +61,6 @@ No major hyperparameter tuning was needed. While GridSearch was done to explore 
 
 `random_state= 2`
 
-## Model Evaluation
-
 ## Contributors
 
 Austin Caras
