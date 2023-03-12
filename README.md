@@ -37,24 +37,26 @@ Rows with excessive Unknown values were dropped to preserve the sample size. No 
 
 ### Feature Analysis
 
-Each potential feature was run against the target in a 1:1 model to determine their correlation. This novel technique was used to try and discern which features were irrelevant.
+These tests can be found in the feature_selection folder.
 
-Out of the original column data, the highest correlating feature was `Total_Revolving_Balance`.
+Features were evaluated using the following techniques:
 
-While most variables were conserved as features in one way or another, this step proved useful for our initial analysis of the raw data.
+Each potential feature was run against the target in a 1:1 model to determine their correlation and  discern which features were irrelevant.
 
+Sequential Feature Selection was run 'forwards' to determine the most optimal features.
 
-### Standard Scaling 
-Scale numerical/float values
+Fisher scores were generated.
 
+A heatmap was generated to show correlation between features/features and features/target.
 
-### Oversampling
-Use SMOTE to add synthetic data and balance our target feature value count
-
+### Data Processing
+Scale numerical/float values with StandardScaler
+SMOTE to add synthetic data and balance our target feature value count
+OneHotEncoder to encode categorical features
 
 ## Hyperparameters
 
-No major hyperparameter tuning was needed. GridSearch was done to explore the best possible values, only the following were changed:
+GridSearch was done to explore the best possible values. The following were changed from default values:
 
 `n_estimators=500`
 
