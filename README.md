@@ -1,6 +1,6 @@
 # bank_churn_model
 
-The main notebook is `bank_churn_final.ipynb`
+The main notebook is `final_model.ipynb`
 
 The goal is to create a supervised machine learning model for predicting bank customer churn. Alternative data processing techniques, features, and models are used as comparisons. 
 
@@ -44,10 +44,9 @@ Out of the original column data, the highest correlating feature was `Total_Revo
 While most variables were conserved as features in one way or another, this step proved useful for our initial analysis of the raw data.
 
 
-### Standard Scaling with Column Transformer
+### Standard Scaling 
 Scale numerical/float values
 
-Use Column Transformer to target specific features for scaling
 
 ### Oversampling
 Use SMOTE to add synthetic data and balance our target feature value count
@@ -55,7 +54,7 @@ Use SMOTE to add synthetic data and balance our target feature value count
 
 ## Hyperparameters
 
-No major hyperparameter tuning was needed. While GridSearch was done to explore the best possible values, only the following were changed:
+No major hyperparameter tuning was needed. GridSearch was done to explore the best possible values, only the following were changed:
 
 `n_estimators=500`
 
